@@ -1,0 +1,345 @@
+/* Navigacija */
+.izbornik{
+    list-style-type: none;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    
+}
+
+.navigacija{
+    display: flex;
+    justify-content: end;
+}
+
+.izbornik a{
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.izbornik a:hover{
+    border-bottom: 2px solid blue;
+}
+
+.logotip{
+    float: left;
+}
+
+.logotip img{
+    height: 25px;
+    width: 50px;
+}
+
+.aktivna-stranica{
+    border-bottom: 5px solid blue;
+}
+
+
+/* Početna stranica */
+.fotografija img{
+    height: 250x;
+    width: 400px;
+}
+
+.podnozje{
+    text-align: center;
+}
+
+.pozadina img{
+    width: 100%;
+    height: 400px;
+}
+
+p{
+    text-align: justify;
+    width: 100%;
+}
+
+/* Katalog */
+.katalog-grid{
+    text-align: center;
+}
+
+.proizvod{
+    width: 250px;
+    margin-left: 2cm;
+    border: 2px solid black;
+}
+
+
+.katalog-grid p{
+    text-align: center;
+}
+
+.proizvod button{
+    width: 100%;
+}
+
+
+/* Usluge */
+.sidebar{
+    list-style-type: none;
+    height: 100%;
+    width: 180px;
+    background-color: lightblue;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.sidebar li{
+    display: flexbox;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.sidebar li:hover{
+    background-color: rgb(0, 213, 255);
+}
+
+/* Kontakt  */
+.obrazac{
+    margin: auto;
+    display: block;
+    text-align: center;
+}
+
+fieldset{
+    border-radius: 20px;
+    width: 10cm;
+}
+
+.imePrezime{
+    width: 5cm;
+    padding-left: 25%;
+    padding-right: 25%;
+}
+
+.email{
+    width: 5cm;
+    padding-left: 25%;
+    padding-right: 25%;
+}
+
+.upit{
+    width: 5cm;
+    padding-left: 25%;
+    padding-right: 25%;
+}
+
+/* Gumb - povratak na vrh */
+#vrh-gumb{
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    background-color: #222831;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+
+/* Grid - početna stranica */
+.izbornik{grid-area: izbornik;}
+.pozadina{grid-area: pozadina;}
+.prva-vijest{grid-area: prva-vijest;}
+.o-nama{grid-area: o-nama;}
+.druga-vijest{grid-area: druga-vijest;}
+.video{grid-area: video;}
+.fotografija{grid-area: fotografija;}
+
+
+/* Grid - usluge */
+.sidebar{grid-area: sidebar;}
+.skeniranje{grid-area: skeniranje;}
+.printanje{grid-area: printanje;}
+.omatanje{grid-area: omatanje;}
+.umatanje{grid-area: umatanje;}
+
+
+/* Grid - katalog */
+.berlin{grid-area: berlin;}
+.face{grid-area: face;}
+.healing{grid-area: healing;}
+.caribou{grid-area: caribou;}
+.port{grid-area: port;}
+.sing{grid-area: sing;}
+.risk{grid-area: risk;}
+.river{grid-area: river;}
+.scars{grid-area: scars;}
+.carol{grid-area: carol;}
+.passion{grid-area: passion;}
+.where{grid-area: where;}
+
+
+/* Grid - kontakt */
+.obrazac{grid-area: obrazac;}
+.karta{grid-area: karta;}
+
+
+
+
+/* Stolno računalo */
+@media (min-width: 1281px) {
+    .index-grid{
+        display: grid;
+        grid-template-areas: 
+        "izbornik       izbornik    izbornik    izbornik"
+        "pozadina       pozadina    pozadina    pozadina"
+        "prva-vijest    o-nama      o-nama      o-nama"
+        "druga-vijest   o-nama      o-nama      o-nama"
+        "video          video       fotografija fotografija";
+        column-gap: 2cm;
+    }
+
+    .usluge-grid{
+        display: grid;
+        grid-template-areas:
+        "izbornik       izbornik    izbornik    izbornik"
+        "pozadina       pozadina    pozadina    pozadina"
+        "sidebar        skeniranje  skeniranje  skeniranje"
+        "sidebar        printanje   printanje   printanje"
+        "sidebar        omatanje    omatanje    omatanje" 
+        "sidebar        umatanje    umatanje    umatanje";
+    }
+
+    .katalog-grid{
+        display: grid;
+        grid-template-areas:
+        "izbornik       izbornik    izbornik    izbornik"
+        "pozadina       pozadina    pozadina    pozadina"
+        "berlin         face        healing     caribou"
+        "port           sing        risk        river"
+        "scars          carol       passion     where";
+        row-gap: 1cm;
+    }
+
+    .kontakt-grid{
+        display: grid;
+        grid-template-areas: 
+        "izbornik       izbornik    izbornik    izbornik"
+        "pozadina       pozadina    pozadina    pozadina"
+        "obrazac        obrazac     karta       karta"
+        "obrazac        obrazac     karta       karta";
+        row-gap: 1rem;
+        column-gap: 3cm;
+    }
+}
+
+/* Tablet */
+
+@media (min-width: 801px) and (max-width: 1281px) {
+    .index-grid{
+        display: grid;
+        grid-template-areas: 
+        "izbornik       izbornik        izbornik"
+        "pozadina       pozadina        pozadina"
+        "prva-vijest    o-nama          o-nama"
+        "druga-vijest   o-nama          o-nama"
+        "video          fotografija     fotografija";
+        row-gap: 1cm;
+        column-gap: 3cm;
+    }
+
+    .usluge-grid{
+        display: grid;
+        grid-template-areas:
+        "izbornik       izbornik        izbornik"
+        "pozadina       pozadina        pozadina"
+        "sidebar        skeniranje      skeniranje"
+        "sidebar        printanje       printanje"
+        "sidebar        omatanje        omatanje"
+        "sidebar        umatanje        umatanje";
+        row-gap: 1cm;
+        column-gap: 3cm;
+    }
+
+    .katalog-grid{
+        display: grid;
+        grid-template-areas:
+        "izbornik       izbornik        izbornik"
+        "pozadina       pozadina        pozadina"
+        "berlin         face            healing"
+        "caribou        port            sing"
+        "risk           river           scars"
+        "carol          passion         where";
+        row-gap: 2cm;
+    }
+
+    .kontakt-grid{
+        display: grid;
+        grid-template-areas: 
+        "izbornik       izbornik        izbornik"
+        "pozadina       pozadina        pozadina"
+        "obrazac        karta           karta"
+        "obrazac        karta           karta";
+        row-gap: 1cm;
+        column-gap: 1cm;
+    }
+}
+
+/* Mobilni uređaj */
+@media (max-width: 801px) {
+    .index-grid{
+        display: grid;
+        grid-template-areas:
+        "izbornik       izbornik"
+        "pozadina       pozadina"
+        "o-nama         o-nama"
+        "o-nama         o-nama"
+        "fotografija    fotografija"
+        "video          video"
+        "prva-vijest    prva-vijest"
+        "druga-vijest   druga-vijest";
+        row-gap: 1cm;
+        column-gap: 3cm;
+    }
+
+   
+
+
+
+    .usluge-grid{
+        display: grid;
+        grid-template-areas:
+        "izbornik       izbornik"
+        "pozadina       pozadina"
+        "sidebar        skeniranje"
+        "sidebar        printanje"
+        "sidebar        omatanje"
+        "sidebar        umatanje";
+        row-gap: 1cm;
+    }
+
+    .katalog-grid{
+        display: grid;
+        grid-template-areas: 
+        "izbornik       izbornik"
+        "pozadina       pozadina"
+        "berlin         face"
+        "healing        caribou"
+        "port           sing"
+        "risk           river"
+        "scars          carol"
+        "passion        where";
+        row-gap: 2cm;
+    }
+
+    .kontakt-grid{
+        display: grid;
+        grid-template-areas: 
+        "izbornik       izbornik"
+        "pozadina       pozadina"
+        "karta          karta"
+        "obrazac        obrazac";
+        row-gap: 1cm;
+        column-gap: 3cm;
+    }
+}
